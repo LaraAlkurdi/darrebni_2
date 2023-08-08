@@ -50,8 +50,8 @@ class _LoginViewState extends State<LoginView> {
                 prifexIcon: Icons.person_outline,
                 controller: controller.userNameController,
                 validator: (value) {
-                  if (value!.isEmpty || !isName(value)) {
-                    return 'please check your email';
+                  if (value!.isEmpty) {
+                    return 'الرجاء إدخال اسم المستخدم';
                   }
                   return null;
                 },
@@ -69,6 +69,13 @@ class _LoginViewState extends State<LoginView> {
               CustomTextField(
                 hintext: 'رمز تسجيل الدخول',
                 prifexIcon: Icons.key,
+                controller: controller.passwordController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return 'الرجاء إدخال رمز تسجيل الدخول';
+                  }
+                  return null;
+                },
               ),
               SizedBox(
                 height: screenHeight(20),
