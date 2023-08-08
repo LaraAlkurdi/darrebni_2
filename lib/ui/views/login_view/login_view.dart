@@ -31,15 +31,65 @@ class _LoginViewState extends State<LoginView> {
                   textsize: screenWidth(18)),
             ),
             CustomImages(imageName: 'Login'),
+            SizedBox(
+              height: screenHeight(30),
+            ),
             CustomText(
                 text: 'اسم المستخدم',
                 textColor: AppColors.mainPurpleColor,
                 textsize: screenWidth(20)),
+            SizedBox(
+              height: screenHeight(90),
+            ),
             CustomTextField(
               hintext: 'اسم المستخدم',
               prifexIcon: Icons.person_outline,
             ),
+            SizedBox(
+              height: screenHeight(90),
+            ),
+            CustomText(
+                text: 'رمز تسجيل الدخول',
+                textColor: AppColors.mainPurpleColor,
+                textsize: screenWidth(20)),
+            SizedBox(
+              height: screenHeight(90),
+            ),
+            CustomTextField(
+              hintext: 'رمز تسجيل الدخول',
+              prifexIcon: Icons.key,
+            ),
+            SizedBox(
+              height: screenHeight(20),
+            ),
             CustomButton(text: 'تسجيل الدخول'),
+            SizedBox(
+              height: screenHeight(80),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                    text: 'ليس لديك حساب؟',
+                    textColor: AppColors.mainTextGreyColor,
+                    textsize: screenWidth(24)),
+                CustomText(
+                    text: 'انشأ حسابك الآن',
+                    textColor: AppColors.mainPurpleColor2,
+                    textsize: screenWidth(24)),
+              ],
+            ),
+            SizedBox(
+              height: screenHeight(16),
+            ),
+            Center(
+              child: CustomText(
+                  onPressed: () {},
+                  textDecoration: TextDecoration.underline,
+                  text: 'المتابعة كزائر',
+                  textColor: AppColors.mainTextGreyColor,
+                  textsize: screenWidth(24)),
+            ),
           ],
         ),
       ),
