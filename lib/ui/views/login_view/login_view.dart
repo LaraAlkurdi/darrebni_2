@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:impty_project/ui/shared/colors.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_button.dart';
+import 'package:impty_project/ui/shared/custom_widgets/custom_images.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text_field.dart';
 import 'package:impty_project/ui/shared/utils.dart';
@@ -28,9 +30,11 @@ class _LoginViewState extends State<LoginView> {
                   textColor: AppColors.mainTextColor,
                   textsize: screenWidth(18)),
             ),
-
-            // textColor: AppColors.mainPurpleColor,
-            // textsize: screenWidth(20)),
+            CustomImages(imageName: 'Login'),
+            CustomText(
+                text: 'اسم المستخدم',
+                textColor: AppColors.mainPurpleColor,
+                textsize: screenWidth(20)),
             CustomTextField(
               hintext: 'اسم المستخدم',
               prifexIcon: Icons.person_outline,
