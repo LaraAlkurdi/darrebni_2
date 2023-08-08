@@ -23,38 +23,35 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: size.width * 0.04),
-      child: ElevatedButton(
-        onPressed: () {
-          if (onPressed != null) onPressed!();
-        },
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (imageName != null) ...[
-              SvgPicture.asset('images/$imageName.svg'),
-              SizedBox(
-                width: size.width * 0.05,
-              ),
-            ],
-            Text(
-              text,
-              style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+    return ElevatedButton(
+      onPressed: () {
+        if (onPressed != null) onPressed!();
+      },
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (imageName != null) ...[
+            SvgPicture.asset('images/$imageName.svg'),
+            SizedBox(
+              width: size.width * 0.05,
             ),
           ],
-        ),
-        style: ElevatedButton.styleFrom(
-          fixedSize: Size(size.width, size.width * 0.13),
-          // shape: StadiumBorder(),
-          backgroundColor: backgroundColor ?? AppColors.mainPurpleColor,
-          side: borderColor != null
-              ? BorderSide(
-                  width: 1.0,
-                  color: borderColor!,
-                )
-              : null,
-        ),
+          Text(
+            text,
+            style: TextStyle(color: textColor, fontWeight: FontWeight.bold),
+          ),
+        ],
+      ),
+      style: ElevatedButton.styleFrom(
+        fixedSize: Size(size.width, size.width * 0.13),
+        // shape: StadiumBorder(),
+        backgroundColor: backgroundColor ?? AppColors.mainPurpleColor,
+        side: borderColor != null
+            ? BorderSide(
+                width: 1.0,
+                color: borderColor!,
+              )
+            : null,
       ),
     );
   }

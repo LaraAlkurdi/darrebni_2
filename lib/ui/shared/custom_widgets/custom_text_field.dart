@@ -12,33 +12,31 @@ class CustomTextField extends StatelessWidget {
   final String hintext;
   final IconData? suffexIcon;
   final IconData? prifexIcon;
-  final String? Function(String?)? validator;
-  final TextEditingController? controller;
+  final String? Function(String?)?
+      validator; //المدقق:لفحص المدخلات التي يدخلها المستخدم نفس شغل الكونترولر
+  final TextEditingController?
+      controller; //للحصول على المدخلات التي يقوم المستخدم بادخالها
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
-    return Padding(
-      padding: EdgeInsets.symmetric(
-          horizontal: size.width * 0.05, vertical: size.width * 0.01),
-      child: TextFormField(
-        validator: validator,
-        controller: controller,
-        decoration: InputDecoration(
-          suffixIcon: Icon(suffexIcon),
-          prefixIcon: Icon(prifexIcon),
-          contentPadding: EdgeInsets.symmetric(
-              vertical: size.width * 0.04, horizontal: size.width * 0.05),
-          filled: true,
-          fillColor: AppColors.mainSkyColor,
-          hintText: hintext,
-          hintStyle: TextStyle(
-              color: Color.fromRGBO(182, 183, 183, 1),
-              fontSize: size.width * 0.04),
-          border: OutlineInputBorder(
-              borderSide: BorderSide.none,
-              borderRadius: BorderRadius.all(Radius.circular(10))),
-        ),
+    return TextFormField(
+      validator: validator,
+      controller: controller,
+      decoration: InputDecoration(
+        suffixIcon: Icon(suffexIcon),
+        prefixIcon: Icon(prifexIcon),
+        contentPadding: EdgeInsets.symmetric(
+            vertical: size.width * 0.04, horizontal: size.width * 0.05),
+        filled: true,
+        fillColor: AppColors.mainSkyColor,
+        hintText: hintext,
+        hintStyle: TextStyle(
+            color: Color.fromRGBO(182, 183, 183, 1),
+            fontSize: size.width * 0.04),
+        border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.all(Radius.circular(10))),
       ),
     );
   }
