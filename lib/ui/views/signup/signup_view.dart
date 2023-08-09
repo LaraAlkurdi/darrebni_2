@@ -127,7 +127,22 @@ class _SignupViewState extends State<SignupView> {
             //     ),
             //   ],
             // ),
-            Customradiobutton()
+            Row(
+              children: [
+                Customradiobutton(
+                  text: 'كلية الطب ',
+                  value: 1,
+                ),
+                Customradiobutton(
+                  text: 'كلية الطب ',
+                  value: 2,
+                ),
+                Customradiobutton(
+                  text: 'كلية الطب ',
+                  value: 3,
+                ),
+              ],
+            ),
           ]),
         ),
       ),

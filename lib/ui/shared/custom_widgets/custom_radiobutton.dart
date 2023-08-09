@@ -69,7 +69,11 @@ import 'package:impty_project/ui/shared/utils.dart';
 class Customradiobutton extends StatelessWidget {
   const Customradiobutton({
     super.key,
+    required this.text,
+    required this.value,
   });
+  final String text;
+  final int value;
 
   @override
   Widget build(BuildContext context) {
@@ -81,6 +85,10 @@ class Customradiobutton extends StatelessWidget {
             onChanged: (value) {}),
         CustomText(
             text: '',
+            textColor: AppColors.mainTextsColor,
+            textsize: screenWidth(20)),
+        CustomText(
+            text: text,
             textColor: AppColors.mainTextsColor,
             textsize: screenWidth(20))
       ],
