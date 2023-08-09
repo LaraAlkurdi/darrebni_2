@@ -44,6 +44,7 @@ class CustomButton extends StatelessWidget {
       ),
       style: ElevatedButton.styleFrom(
         fixedSize: Size(size.width, size.width * 0.13),
+        // shape: StadiumBorder(),
         backgroundColor: backgroundColor ?? AppColors.mainPurpleColor,
         side: borderColor != null
             ? BorderSide(
