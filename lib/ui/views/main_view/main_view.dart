@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:impty_project/core/enums/bottum_navigation.dart';
 import 'package:impty_project/ui/shared/utils.dart';
+import 'package:impty_project/ui/views/main_view/favorite_view/favorite_view.dart';
 import 'package:impty_project/ui/views/main_view/home_view/home_view.dart';
 import 'package:impty_project/ui/views/main_view/main_view_widgets/bottom_navigation_widget.dart';
+import 'package:impty_project/ui/views/main_view/home_view/home_view.dart';
+import 'package:impty_project/ui/views/main_view/notification_view/notification_view.dart';
+import 'package:impty_project/ui/views/main_view/profile_view/profile_view.dart';
 
 class MainView extends StatefulWidget {
   MainView({Key? key}) : super(key: key);
@@ -14,7 +18,7 @@ class MainView extends StatefulWidget {
 class _MainViewState extends State<MainView> {
   BottomNavigationEnum selected = BottomNavigationEnum.HOME;
   PageController controller = PageController(
-      initialPage: 2); //مسؤو عن تحريك الصفحة ووين بدي يااقلع يعني 2
+      initialPage: 1); //مسؤو عن تحريك الصفحة ووين بدي يااقلع يعني 2
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class _MainViewState extends State<MainView> {
               duration: Duration(
                 milliseconds: 500,
               ),
-              curve: Curves.easeInCirc);
+              curve: Curves.ease);
           setState(() {
             selected = selectedEnum;
           });
@@ -41,7 +45,12 @@ class _MainViewState extends State<MainView> {
         physics: NeverScrollableScrollPhysics(), //عشان مايتحرك بالسحب
         controller: controller, //للانتقال من صفحة لاخرى
         onPageChanged: (pageNumer) {},
-        children: [HomeView()],
+        children: [
+          NotificationView(),
+          HomeView(),
+          FavoriteView(),
+          ProfileView(),
+        ],
       ),
     ));
   }

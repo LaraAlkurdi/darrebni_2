@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:impty_project/ui/shared/utils.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -10,9 +12,15 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.amber,
-      child: Text('data'),
+    return Scaffold(
+      body: Stack(
+        children: [
+          SvgPicture.asset(
+            'assets/images/shapeMaker.svg',
+            height: screenHeight(5.47),
+          ),
+        ],
+      ),
     );
   }
 }

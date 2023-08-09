@@ -5,9 +5,8 @@ import 'package:impty_project/ui/shared/colors.dart';
 import 'package:impty_project/ui/shared/utils.dart';
 
 class BottomNavigationWidget extends StatefulWidget {
-  final BottomNavigationEnum bottomNavigationEnum; //نمرر الاينم لنعرف وين كبسنا
-  final Function(BottomNavigationEnum, int)
-      onTap; //عشان رقم الصفحة واللون من الاينم
+  final BottomNavigationEnum bottomNavigationEnum;
+  final Function(BottomNavigationEnum, int) onTap;
   BottomNavigationWidget(
       {Key? key, required this.bottomNavigationEnum, required this.onTap})
       : super(key: key);
@@ -38,8 +37,6 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
                   imageName: 'ic_profile',
                   isSelected: widget.bottomNavigationEnum ==
                       BottomNavigationEnum.PROFILE,
-                  //on tap:mainViewوقت يكبس على زر بحرك شغلة من
-                  //Viewpage بحرك الكونترولر ل
                   onTap: () {
                     widget.onTap(BottomNavigationEnum.PROFILE, 3);
                   },
@@ -88,12 +85,20 @@ class _BottomNavigationWidgetState extends State<BottomNavigationWidget> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset('assets/images/$imageName.svg',
-              width: screenWidth(20), color: AppColors.mainPurpleColor),
-          Container(
-            height: 2,
-            color: AppColors.mainPurpleColor, // يمكنك تعديل لون الخط هنا
+          SvgPicture.asset(
+            'assets/images/$imageName.svg',
+            width: screenWidth(18),
+            color: AppColors.mainPurpleColor,
           ),
+          SizedBox(
+            height: screenHeight(90),
+          ),
+          if (isSelected)
+            Container(
+              width: screenWidth(8),
+              height: screenHeight(250),
+              color: AppColors.mainPurpleColor,
+            ),
         ],
       ),
     );
