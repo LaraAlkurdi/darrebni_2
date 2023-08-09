@@ -17,8 +17,7 @@ class MainView extends StatefulWidget {
 
 class _MainViewState extends State<MainView> {
   BottomNavigationEnum selected = BottomNavigationEnum.HOME;
-  PageController controller = PageController(
-      initialPage: 1); //مسؤو عن تحريك الصفحة ووين بدي يااقلع يعني 2
+  PageController controller = PageController(initialPage: 1);
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
@@ -42,8 +41,8 @@ class _MainViewState extends State<MainView> {
         },
       ),
       body: PageView(
-        physics: NeverScrollableScrollPhysics(), //عشان مايتحرك بالسحب
-        controller: controller, //للانتقال من صفحة لاخرى
+        physics: NeverScrollableScrollPhysics(),
+        controller: controller,
         onPageChanged: (pageNumer) {},
         children: [
           NotificationView(),
