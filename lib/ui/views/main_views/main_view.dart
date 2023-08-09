@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:impty_project/core/enums/bottum_navigation.dart';
+import 'package:impty_project/ui/views/main_views/favorite_view/favorite_view.dart';
+import 'package:impty_project/ui/views/main_views/home_view/home_view.dart';
+import 'package:impty_project/ui/views/main_views/main_view_widgets/bottom_navigation_widget.dart';
+import 'package:impty_project/ui/views/main_views/notification_view/notification_view.dart';
 import 'package:impty_project/ui/views/main_view/profile_view/profile_view.dart';
 
 class MainView extends StatefulWidget {
