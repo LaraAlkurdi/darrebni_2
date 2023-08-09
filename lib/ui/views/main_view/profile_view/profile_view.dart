@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:impty_project/ui/shared/colors.dart';
-import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
-import 'package:impty_project/ui/shared/utils.dart';
-import 'package:impty_project/ui/views/main_view/profile_view/custom_profile.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -17,7 +14,7 @@ class _ProfileViewState extends State<ProfileView> {
     return Scaffold(
       body: Column(
         children: [
-          CustomProfile(),
+          CircleAvatar(child: SvgPicture.asset('ic_profile.svg')),
         ],
       ),
     );
