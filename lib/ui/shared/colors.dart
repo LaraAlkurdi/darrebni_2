@@ -5,7 +5,7 @@ class AppColors {
   static Color transparentColor = Color.fromRGBO(255, 255, 255, 0);
   static Color mainRedColor = Color.fromRGBO(221, 75, 57, 1);
   static Color mainGreyColor = Color.fromRGBO(242, 242, 242, 1);
-  // static Color mainTextGreyColor = Color.fromRGBO(182, 183, 183, 1);
+  static Color mainTextGreyColor = Color.fromRGBO(182, 183, 183, 1);
   static Color mainGreenColor = Color.fromRGBO(53, 142, 28, 1);
   static Color mainTextColor = Color.fromRGBO(74, 75, 77, 1);
 //!--
