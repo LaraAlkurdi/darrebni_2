@@ -9,12 +9,12 @@ class CustomText extends StatelessWidget {
     this.fontWeight,
     required this.textsize,
     this.textDecoration,
-    this.textAlign,
+    // this.textAlign,
     this.container,
   });
 
   final String text;
-  final TextAlign? textAlign;
+  // final TextAlign? textAlign;
   final TextDecoration? textDecoration;
   final Color textColor;
   final double textsize;
@@ -28,7 +28,7 @@ class CustomText extends StatelessWidget {
         SizedBox(width: screenWidth(60)),
         Text(
           text,
-          textAlign: textAlign,
+          // textAlign: textAlign,
           style: TextStyle(
             decoration: textDecoration,
             fontSize: textsize,

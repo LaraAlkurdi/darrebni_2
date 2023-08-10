@@ -47,7 +47,8 @@ class _LoginViewState extends State<LoginView> {
               ),
               CustomTextField(
                 hintext: 'اسم المستخدم',
-                prifexIcon: Icons.person_outline,
+                colorText: AppColors.mainTextGreyColor,
+                suffixImage: 'ic_user',
                 controller: controller.userNameController,
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -68,7 +69,9 @@ class _LoginViewState extends State<LoginView> {
               ),
               CustomTextField(
                 hintext: 'رمز تسجيل الدخول',
-                prifexIcon: Icons.key,
+                colorText: AppColors.mainTextGreyColor,
+                suffixImage: 'ic_key',
+                suffixColor: AppColors.mainPurpleColor,
                 controller: controller.passwordController,
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -98,11 +101,10 @@ class _LoginViewState extends State<LoginView> {
                 ],
               ),
               SizedBox(
-                height: screenHeight(16),
+                height: screenHeight(40),
               ),
               Center(
                 child: CustomText(
-                    onPressed: () {},
                     textDecoration: TextDecoration.underline,
                     text: 'المتابعة كزائر',
                     textColor: AppColors.mainTextGreyColor,
