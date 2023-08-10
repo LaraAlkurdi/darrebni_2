@@ -3,6 +3,7 @@ import 'package:impty_project/core/enums/bottum_navigation.dart';
 import 'package:impty_project/ui/views/main_view/favorite_view/favorite_view.dart';
 import 'package:impty_project/ui/views/main_view/home_view/home_view.dart';
 import 'package:impty_project/ui/views/main_view/main_view_widgets/bottom_navigation_widget.dart';
+import 'package:impty_project/ui/views/main_view/main_view_widgets/page_with_image.dart';
 import 'package:impty_project/ui/views/main_view/notification_view/notification_view.dart';
 import 'package:impty_project/ui/views/main_view/profile_view/profile_view.dart';
 
@@ -43,10 +44,18 @@ class _MainViewState extends State<MainView> {
         controller: controller,
         onPageChanged: (pageNumer) {},
         children: [
-          NotificationView(),
-          HomeView(),
-          FavoriteView(),
-          ProfileView(),
+          PageWithImage(
+            page: NotificationView(),
+          ),
+          PageWithImage(
+            page: HomeView(),
+          ),
+          PageWithImage(
+            page: FavoriteView(),
+          ),
+          PageWithImage(
+            page: ProfileView(),
+          ),
         ],
       ),
     ));
