@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:impty_project/ui/shared/utils.dart';
 
 class CustomText extends StatelessWidget {
   const CustomText({
@@ -10,6 +11,7 @@ class CustomText extends StatelessWidget {
     this.textDecoration,
     this.textAlign,
     this.onPressed,
+    this.container,
   });
   final Function? onPressed;
   final String text;
@@ -18,17 +20,24 @@ class CustomText extends StatelessWidget {
   final Color textColor;
   final double textsize;
   final FontWeight? fontWeight;
+  final Container? container;
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      textAlign: textAlign,
-      style: TextStyle(
-        decoration: textDecoration,
-        fontSize: textsize,
-        fontWeight: fontWeight ?? FontWeight.bold,
-        color: textColor, //عامل main black color
-      ),
+    return Row(
+      children: [
+        if (container != null) container!,
+        SizedBox(width: screenWidth(60)),
+        Text(
+          text,
+          textAlign: textAlign,
+          style: TextStyle(
+            decoration: textDecoration,
+            fontSize: textsize,
+            fontWeight: fontWeight ?? FontWeight.bold,
+            color: textColor, //عامل main black color
+          ),
+        ),
+      ],
     );
   }
 }
