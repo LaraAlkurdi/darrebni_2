@@ -10,10 +10,9 @@ class CustomText extends StatelessWidget {
     required this.textsize,
     this.textDecoration,
     this.textAlign,
-    this.onPressed,
     this.container,
   });
-  final Function? onPressed;
+
   final String text;
   final TextAlign? textAlign;
   final TextDecoration? textDecoration;
@@ -34,7 +33,7 @@ class CustomText extends StatelessWidget {
             decoration: textDecoration,
             fontSize: textsize,
             fontWeight: fontWeight ?? FontWeight.bold,
-            color: textColor, //عامل main black color
+            color: textColor,
           ),
         ),
       ],
