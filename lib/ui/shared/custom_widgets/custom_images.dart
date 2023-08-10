@@ -14,6 +14,7 @@ class CustomImages extends StatelessWidget {
       child: SvgPicture.asset(
         'assets/images/$imageName.svg',
         width: imageSize ?? screenWidth(1.9),
+        height: imageSize,
         color: imageColor,
       ),
     );
