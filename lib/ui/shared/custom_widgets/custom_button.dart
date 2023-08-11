@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:impty_project/ui/shared/colors.dart';
+import 'package:impty_project/ui/shared/utils.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton(
@@ -8,7 +9,7 @@ class CustomButton extends StatelessWidget {
       this.onPressed,
       this.backgroundColor,
       required this.text,
-      this.textColor = const Color.fromRGBO(252, 252, 252, 1), //لازم شيل اللون
+      this.textColor,
       this.borderColor,
       this.imageName})
       : super(key: key);
@@ -43,7 +44,7 @@ class CustomButton extends StatelessWidget {
         ],
       ),
       style: ElevatedButton.styleFrom(
-        fixedSize: Size(size.width, size.width * 0.13),
+        fixedSize: Size(size.width, screenHeight(15)),
         // shape: StadiumBorder(),
         backgroundColor: backgroundColor ?? AppColors.mainPurpleColor,
         side: borderColor != null
