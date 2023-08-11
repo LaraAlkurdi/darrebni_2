@@ -50,8 +50,8 @@ class CustomTextField extends StatelessWidget {
           ),
         ),
         contentPadding: EdgeInsets.symmetric(
-          vertical: size.width * 0.04,
-          horizontal: size.width * 0.05,
+          vertical: screenHeight(50),
+          horizontal: screenWidth(60),
         ),
         filled: true,
         fillColor: AppColors.mainSkyColor,
@@ -62,7 +62,7 @@ class CustomTextField extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide.none,
-          borderRadius: BorderRadius.all(Radius.circular(10)),
+          borderRadius: BorderRadius.all(Radius.circular(screenWidth(50))),
         ),
       ),
     );

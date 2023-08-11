@@ -24,8 +24,10 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        if (container != null) container!,
-        SizedBox(width: screenWidth(60)),
+        if (container != null) ...[
+          container!,
+          SizedBox(width: screenWidth(60)),
+        ],
         Text(
           text,
           textAlign: textAlign,
