@@ -62,35 +62,45 @@
 // }
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:impty_project/ui/shared/colors.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/utils.dart';
+import 'package:impty_project/ui/views/signup/signup_controller.dart';
 
-class Customradiobutton extends StatelessWidget {
-  const Customradiobutton({
+class Customradiobutton extends StatefulWidget {
+  Customradiobutton({
     super.key,
     required this.text,
-    required this.value,
   });
   final String text;
-  final int value;
 
+  @override
+  State<Customradiobutton> createState() => _CustomradiobuttonState();
+}
+
+class _CustomradiobuttonState extends State<Customradiobutton> {
+  SignupController signupController = Get.put(SignupController());
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Radio(
+        Obx(
+          () => Radio(
             value: 'radio value',
-            groupValue: 'group value',
-            onChanged: (value) {}),
+            groupValue: signupController.SelectedValue.value,
+            onChanged: (value) {
+              signupController.onChangeSelected(value);
+            },
+            activeColor: AppColors.mainPurpleColor,
+            fillColor: MaterialStateProperty.all(AppColors.mainPurpleColor),
+          ),
+        ),
         CustomText(
-            text: '',
+            text: widget.text,
             textColor: AppColors.mainTextsColor,
-            textsize: screenWidth(20)),
-        CustomText(
-            text: text,
-            textColor: AppColors.mainTextsColor,
-            textsize: screenWidth(20))
+            textsize: screenWidth(25)),
       ],
     );
   }

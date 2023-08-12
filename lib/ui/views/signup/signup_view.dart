@@ -10,6 +10,7 @@ import 'package:impty_project/ui/shared/custom_widgets/custom_radiobutton.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text_field.dart';
 import 'package:impty_project/ui/shared/utils.dart';
+import 'package:impty_project/ui/views/signup/signup_controller.dart';
 import 'package:impty_project/ui/views/splash_screen/splash_screen_view.dart';
 
 class SignupView extends StatefulWidget {
@@ -20,7 +21,8 @@ class SignupView extends StatefulWidget {
 }
 
 class _SignupViewState extends State<SignupView> {
-  int _value = 1;
+  SignupController signupController = Get.put(SignupController());
+  int value = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,72 +77,30 @@ class _SignupViewState extends State<SignupView> {
             SizedBox(
               height: screenWidth(20),
             ),
-
-            //!ddddddd
-            // Row(
-            //   children: [
-            //     MyRadioListTile<int>(
-            //       value: 1,
-            //       groupValue: _value,
-            //       leading: 'A',
-            //       title: Text('الطب البشري '),
-            //       onChanged: (value) => setState(() => _value = value!),
-            //     ),
-            //     MyRadioListTile<int>(
-            //       value: 2,
-            //       groupValue: _value,
-            //       leading: 'B',
-            //       title: Text('طب الأسنان'),
-            //       onChanged: (value) => setState(() => _value = value!),
-            //     ),
-            //     MyRadioListTile<int>(
-            //       value: 3,
-            //       groupValue: _value,
-            //       leading: 'C',
-            //       title: Text('كلية الصيدلة'),
-            //       onChanged: (value) => setState(() => _value = value!),
-            //     ),
-            //   ],
-            // ),
-            // Row(
-            //   children: [
-            //     MyRadioListTile<int>(
-            //       value: 4,
-            //       groupValue: _value,
-            //       leading: 'A',
-            //       title: Text('الهندسة المعلوماتية'),
-            //       onChanged: (value) => setState(() => _value = value!),
-            //     ),
-            //     MyRadioListTile<int>(
-            //       value: 5,
-            //       groupValue: _value,
-            //       leading: 'B',
-            //       title: Text(' الهندسة المعمارية'),
-            //       onChanged: (value) => setState(() => _value = value!),
-            //     ),
-            //     MyRadioListTile<int>(
-            //       value: 6,
-            //       groupValue: _value,
-            //       leading: 'C',
-            //       title: Text('التمريض'),
-            //       onChanged: (value) => setState(() => _value = value!),
-            //     ),
-            //   ],
-            // ),
             Row(
               children: [
                 Customradiobutton(
                   text: 'كلية الطب ',
-                  value: 1,
                 ),
                 Customradiobutton(
                   text: 'كلية الطب ',
-                  value: 2,
                 ),
                 Customradiobutton(
                   text: 'كلية الطب ',
-                  value: 3,
+                )
+              ],
+            ),
+            Row(
+              children: [
+                Customradiobutton(
+                  text: 'كلية الطب ',
                 ),
+                Customradiobutton(
+                  text: 'كلية الطب ',
+                ),
+                Customradiobutton(
+                  text: 'كلية الطب ',
+                )
               ],
             ),
           ]),
