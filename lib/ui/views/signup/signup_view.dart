@@ -4,12 +4,14 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:impty_project/ui/shared/colors.dart';
+import 'package:impty_project/ui/shared/custom_widgets/custom_button.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_icon.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_images.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_radiobutton.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text.dart';
 import 'package:impty_project/ui/shared/custom_widgets/custom_text_field.dart';
 import 'package:impty_project/ui/shared/utils.dart';
+import 'package:impty_project/ui/views/main_view/main_view.dart';
 import 'package:impty_project/ui/views/signup/signup_controller.dart';
 import 'package:impty_project/ui/views/splash_screen/splash_screen_view.dart';
 
@@ -22,7 +24,7 @@ class SignupView extends StatefulWidget {
 
 class _SignupViewState extends State<SignupView> {
   SignupController signupController = Get.put(SignupController());
-  int value = 1;
+  int Value = 1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,9 +58,13 @@ class _SignupViewState extends State<SignupView> {
                   textColor: AppColors.mainPurpleColor,
                   textsize: screenWidth(22)),
             ),
-            CustomTextField(
-              prifexIcon: Icons.person_2_outlined,
-              hintext: 'اسم المستخدم',
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth(25)),
+              child: CustomTextField(
+                prifexIcon: Icons.person_2_outlined,
+                hintext: 'اسم المستخدم',
+                controller: signupController.emailController,
+              ),
             ),
             SizedBox(
               height: screenWidth(34),
@@ -70,9 +76,12 @@ class _SignupViewState extends State<SignupView> {
                   textColor: AppColors.mainPurpleColor,
                   textsize: screenWidth(22)),
             ),
-            CustomTextField(
-              prifexIcon: Icons.phone_outlined,
-              hintext: ' رقم الموبايل',
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth(25)),
+              child: CustomTextField(
+                prifexIcon: Icons.phone_outlined,
+                hintext: ' رقم الموبايل',
+              ),
             ),
             SizedBox(
               height: screenWidth(20),
@@ -80,12 +89,15 @@ class _SignupViewState extends State<SignupView> {
             Row(
               children: [
                 Customradiobutton(
+                  Value: 1,
                   text: 'كلية الطب ',
                 ),
                 Customradiobutton(
+                  Value: 2,
                   text: 'كلية الطب ',
                 ),
                 Customradiobutton(
+                  Value: 3,
                   text: 'كلية الطب ',
                 )
               ],
@@ -93,16 +105,46 @@ class _SignupViewState extends State<SignupView> {
             Row(
               children: [
                 Customradiobutton(
+                  Value: 4,
                   text: 'كلية الطب ',
                 ),
                 Customradiobutton(
+                  Value: 5,
                   text: 'كلية الطب ',
                 ),
                 Customradiobutton(
+                  Value: 6,
                   text: 'كلية الطب ',
                 )
               ],
             ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: screenWidth(20),
+                vertical: screenWidth(25),
+              ),
+              child: CustomButton(
+                text: 'إنشاء حساب ',
+                onPressed: () {
+                  Get.off(MainView());
+                },
+              ),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                    text: 'هل لديك حساب ؟',
+                    textColor: AppColors.mainTextsColor,
+                    textsize: screenWidth(25)),
+                CustomText(
+                  text: 'تسجيل الدخول ',
+                  textColor: AppColors.mainPurpleColor,
+                  textsize: screenWidth(25),
+                  onPressed: () {},
+                )
+              ],
+            )
           ]),
         ),
       ),

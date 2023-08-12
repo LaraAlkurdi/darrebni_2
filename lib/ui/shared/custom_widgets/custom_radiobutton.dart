@@ -73,9 +73,10 @@ class Customradiobutton extends StatefulWidget {
   Customradiobutton({
     super.key,
     required this.text,
+    required this.Value,
   });
   final String text;
-
+  final int Value;
   @override
   State<Customradiobutton> createState() => _CustomradiobuttonState();
 }
@@ -88,7 +89,7 @@ class _CustomradiobuttonState extends State<Customradiobutton> {
       children: [
         Obx(
           () => Radio(
-            value: 'radio value',
+            value: widget.Value.toString(),
             groupValue: signupController.SelectedValue.value,
             onChanged: (value) {
               signupController.onChangeSelected(value);
